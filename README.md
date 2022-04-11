@@ -2,14 +2,14 @@
  Tool for bug hunters when you have a big list of endpoints this tool helps you to extract unique parameters clean and without duplication of values with preserving the original values
 
 
-# install 
+### install 
 `go get -u github.com/raoufmaklouf/cleanP`
 
 
-# usage
+### usage
 ` cleanP file.txt`
 
-# example
+### example
 
 ```
 > cat EndPointFile.txt
