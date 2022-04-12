@@ -19,7 +19,7 @@ http://www.testme.com/prod/aaa?size=L
 http://www.testme.com/prod/fff?size=XL
 http://www.testme.com/prod/rrr?size=XXL
 http://www.testme.com/user/bob?q=show
-http://www.testme.com/user/jack?q=test1&id=123
+http://www.testme.com/user/jack?q=remove&id=123
 http://www.testme.com/user/nilson?q=add&id=456
 http://www.testme.com/user/ramzi?q=add&id=123
 http://www.testme.com/user/nina?q=add&id=456
