@@ -13,21 +13,20 @@
 
 ```
 > cat EndPointFile.txt
-http://www.testme.com/path1/aaaa?q=test1
-http://www.testme.com/path2/aaab?q=test1
-http://www.testme.com/path1/aaaa?q=test2
-http://www.testme.com/path2/aaac?q=test2
-http://www.testme.com/path1/aaab?q=test3
-http://www.testme.com/path2/aaaa?q=test3
-http://www.testme.com/path1/aaac?q=test1&id=123
-http://www.testme.com/path2/aaac?q=test1&id=456
-http://www.testme.com/path1/aaac?q=test1&id=123
-http://www.testme.com/path2/aaaa?q=test1&id=456
+http://www.testme.com/prod/abc?size=S
+http://www.testme.com/prod/xyz?size=M
+http://www.testme.com/prod/aaa?size=L
+http://www.testme.com/prod/fff?size=XL
+http://www.testme.com/prod/rrr?size=XXL
+http://www.testme.com/user/bob?q=show
+http://www.testme.com/user/jack?q=test1&id=123
+http://www.testme.com/user/nilson?q=add&id=456
+http://www.testme.com/user/ramzi?q=add&id=123
+http://www.testme.com/user/nina?q=add&id=456
 ```
 ```
 > cleanP EndPointFile.txt
-http://www.testme.com/path1/aaaa?q=test1
-http://www.testme.com/path2/aaab?q=test1
-http://www.testme.com/path1/aaac?q=test1&id=123
-http://www.testme.com/path2/aaac?q=test1&id=456
+http://www.testme.com/prod/abc?size=S
+http://www.testme.com/user/bob?q=show
+http://www.testme.com/user/jack?q=test1&id=123
 ```
