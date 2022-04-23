@@ -7,7 +7,7 @@
 
 
 ### usage
-` cleanP file.txt`
+` cat file.txt | cleanP `
 
 ### example
 
@@ -25,7 +25,7 @@ http://www.testme.com/user/ramzi?q=add&id=123
 http://www.testme.com/user/nina?q=add&id=456
 ```
 ```
-> cleanP EndPointFile.txt
+> cat EndPointFile.txt | cleanP 
 http://www.testme.com/prod/abc?size=S
 http://www.testme.com/user/bob?q=show
 http://www.testme.com/user/jack?q=remove&id=123
