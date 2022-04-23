@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"log"
 	"os"
 	"regexp"
 	"strings"
@@ -12,19 +11,10 @@ import (
 func main() {
 	cont := []string{}
 	uniqPath := []string{}
-	file := os.Args[1]
+	sc := bufio.NewScanner(os.Stdin)
+	for sc.Scan() {
 
-	f, err := os.Open(file)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	for scanner.Scan() {
-		line := scanner.Text()
+		line := sc.Text()
 		regex, _ := regexp.MatchString("[?]", line)
 		if regex == true {
 			urlInjected := injectparam(line)
@@ -42,9 +32,6 @@ func main() {
 
 	}
 
-	if err := scanner.Err(); err != nil {
-		log.Fatal(err)
-	}
 }
 
 func uniqurl(url string) (finalKey string) {
@@ -59,6 +46,39 @@ func uniqurl(url string) (finalKey string) {
 }
 
 func injectparam(url string) (finalResolt string) {
+	paramLink := strings.Split(url, "?")[1]
+	baseul := strings.Split(url, "?")[0] + "?"
+
+	regex2, _ := regexp.MatchString("&", paramLink)
+	if regex2 == true {
+		paramslinks := strings.Split(paramLink, "&")
+		for _, prmt := range paramslinks {
+			key := strings.Split(prmt, "=")[0]
+			injectedParam := key + "=FuZZrAouF&"
+			baseul += injectedParam
+
+		}
+		finalResolt = strings.TrimSuffix(baseul, "&")
+
+	} else {
+		key2 := strings.Split(paramLink, "=")[0]
+		injectedParam2 := key2 + "=FuZZrAouF"
+		baseul += injectedParam2
+		finalResolt = baseul
+	}
+	return
+}
+
+func contains(s []string, str string) bool {
+	for _, v := range s {
+		if v == str {
+			return true
+		}
+	}
+
+	return false
+}
+
 	paramLink := strings.Split(url, "?")[1]
 	baseul := strings.Split(url, "?")[0] + "?"
 
