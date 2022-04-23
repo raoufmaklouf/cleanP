@@ -78,36 +78,3 @@ func contains(s []string, str string) bool {
 
 	return false
 }
-
-	paramLink := strings.Split(url, "?")[1]
-	baseul := strings.Split(url, "?")[0] + "?"
-
-	regex2, _ := regexp.MatchString("&", paramLink)
-	if regex2 == true {
-		paramslinks := strings.Split(paramLink, "&")
-		for _, prmt := range paramslinks {
-			key := strings.Split(prmt, "=")[0]
-			injectedParam := key + "=FuZZrAouF&"
-			baseul += injectedParam
-
-		}
-		finalResolt = strings.TrimSuffix(baseul, "&")
-
-	} else {
-		key2 := strings.Split(paramLink, "=")[0]
-		injectedParam2 := key2 + "=FuZZrAouF"
-		baseul += injectedParam2
-		finalResolt = baseul
-	}
-	return
-}
-
-func contains(s []string, str string) bool {
-	for _, v := range s {
-		if v == str {
-			return true
-		}
-	}
-
-	return false
-}
